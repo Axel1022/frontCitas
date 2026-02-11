@@ -3,10 +3,67 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Agenda Odontológica</title>
+    <title>Citas de clientes</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
-  <body class="bg-clinic-bg">
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+  <body>
+    <main class="app">
+      <header class="app__header">
+        <h1>Agenda de citas</h1>
+        <p>Consulta, filtra y revisa el estado de las citas de tus clientes.</p>
+      </header>
+
+      <section class="toolbar" aria-label="Filtros de citas">
+        <label class="toolbar__field" for="searchInput">
+          Buscar cliente
+          <input id="searchInput" type="search" placeholder="Ej. Ana García" />
+        </label>
+
+        <label class="toolbar__field" for="statusFilter">
+          Estado
+          <select id="statusFilter">
+            <option value="all">Todos</option>
+            <option value="Confirmada">Confirmadas</option>
+            <option value="Pendiente">Pendientes</option>
+            <option value="Cancelada">Canceladas</option>
+          </select>
+        </label>
+      </section>
+
+      <section class="stats" aria-label="Resumen de citas">
+        <article class="stat-card">
+          <h2 id="totalCount">0</h2>
+          <p>Total</p>
+        </article>
+        <article class="stat-card">
+          <h2 id="confirmedCount">0</h2>
+          <p>Confirmadas</p>
+        </article>
+        <article class="stat-card">
+          <h2 id="pendingCount">0</h2>
+          <p>Pendientes</p>
+        </article>
+      </section>
+
+      <section class="table-wrapper" aria-label="Listado de citas">
+        <table>
+          <thead>
+            <tr>
+              <th>Cliente</th>
+              <th>Servicio</th>
+              <th>Fecha</th>
+              <th>Hora</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody id="appointmentsBody"></tbody>
+        </table>
+        <p id="emptyState" class="empty-state" hidden>
+          No hay citas que coincidan con los filtros seleccionados.
+        </p>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
   </body>
 </html>
