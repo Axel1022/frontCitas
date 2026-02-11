@@ -1,0 +1,153 @@
+:root {
+  color-scheme: light;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --primary: #2563eb;
+  --border: #dbe3ee;
+  --ok: #16a34a;
+  --warn: #ca8a04;
+  --danger: #dc2626;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #e8efff, var(--bg));
+  color: var(--text);
+}
+
+.app {
+  width: min(1024px, 92vw);
+  margin: 2rem auto;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.app__header h1 {
+  margin: 0;
+  font-size: clamp(1.75rem, 3vw, 2.2rem);
+}
+
+.app__header p {
+  margin: 0.5rem 0 0;
+  color: var(--muted);
+}
+
+.toolbar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  background: var(--card);
+}
+
+.toolbar__field {
+  display: grid;
+  gap: 0.35rem;
+  font-weight: 600;
+}
+
+input,
+select {
+  border: 1px solid var(--border);
+  border-radius: 0.65rem;
+  padding: 0.65rem 0.75rem;
+  font: inherit;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.9rem;
+}
+
+.stat-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.stat-card h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: var(--primary);
+}
+
+.stat-card p {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+}
+
+.table-wrapper {
+  border-radius: 1rem;
+  border: 1px solid var(--border);
+  background: var(--card);
+  overflow: hidden;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background: #eef3fd;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 0.95rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.status-pill--Confirmada {
+  background: #dcfce7;
+  color: var(--ok);
+}
+
+.status-pill--Pendiente {
+  background: #fef3c7;
+  color: var(--warn);
+}
+
+.status-pill--Cancelada {
+  background: #fee2e2;
+  color: var(--danger);
+}
+
+.empty-state {
+  margin: 1rem;
+  color: var(--muted);
+}
+
+@media (max-width: 700px) {
+  .table-wrapper {
+    overflow-x: auto;
+  }
+
+  th,
+  td {
+    min-width: 140px;
+  }
+}
