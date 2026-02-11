@@ -1,0 +1,91 @@
+import { Patient } from './types';
+
+export const mockPatients: Patient[] = [
+  {
+    id: 'pat_001',
+    name: 'María Pérez',
+    phone: '809-555-1234',
+    email: 'maria@email.com',
+    age: 28,
+    clinicalHistoryBeta: {
+      allergies: ['Penicilina'],
+      conditions: ['Gingivitis leve'],
+      notes: 'Ansiedad ligera en procedimientos largos.',
+      lastProcedures: [
+        { date: '2025-12-10', procedure: 'Profilaxis', notes: 'Recomendación de hilo dental' },
+        { date: '2025-09-01', procedure: 'Limpieza profunda', notes: 'Control en 6 meses' },
+      ],
+    },
+    files: ['Radiografía panorámica (placeholder)', 'Foto intraoral (placeholder)'],
+  },
+  {
+    id: 'pat_002',
+    name: 'José Ramírez',
+    phone: '829-555-1122',
+    email: 'jose@email.com',
+    age: 34,
+    clinicalHistoryBeta: {
+      allergies: [],
+      conditions: ['Bruxismo'],
+      notes: 'Usa férula nocturna.',
+      lastProcedures: [{ date: '2026-01-14', procedure: 'Ajuste de férula', notes: 'Buena adaptación' }],
+    },
+    files: ['Férula digital (placeholder)'],
+  },
+  {
+    id: 'pat_003',
+    name: 'Carla Núñez',
+    phone: '849-555-3311',
+    email: 'carla@email.com',
+    age: 41,
+    clinicalHistoryBeta: {
+      allergies: ['Látex'],
+      conditions: ['Hipertensión controlada'],
+      notes: 'Controlar presión antes de extracción.',
+      lastProcedures: [{ date: '2025-11-08', procedure: 'Resina compuesta', notes: 'Sin molestias' }],
+    },
+    files: ['Consentimiento informado (placeholder)'],
+  },
+  {
+    id: 'pat_004',
+    name: 'Luis Herrera',
+    phone: '809-555-7788',
+    email: 'luis@email.com',
+    age: 22,
+    clinicalHistoryBeta: {
+      allergies: [],
+      conditions: ['Ortodoncia en progreso'],
+      notes: 'Seguimiento mensual.',
+      lastProcedures: [{ date: '2026-02-03', procedure: 'Cambio de arco', notes: 'Dolor leve 48h' }],
+    },
+    files: ['Plan ortodóncico (placeholder)'],
+  },
+  {
+    id: 'pat_005',
+    name: 'Elena Gómez',
+    phone: '809-555-9090',
+    email: 'elena@email.com',
+    age: 30,
+    clinicalHistoryBeta: {
+      allergies: ['Ibuprofeno'],
+      conditions: ['Caries recurrente'],
+      notes: 'Reforzar educación en higiene.',
+      lastProcedures: [{ date: '2025-10-23', procedure: 'Obturación', notes: 'Evolución favorable' }],
+    },
+    files: ['Serie periapical (placeholder)'],
+  },
+  {
+    id: 'pat_006',
+    name: 'Andrés Soto',
+    phone: '829-555-2211',
+    email: 'andres@email.com',
+    age: 49,
+    clinicalHistoryBeta: {
+      allergies: [],
+      conditions: ['Diabetes tipo II'],
+      notes: 'Agendar preferible en la mañana.',
+      lastProcedures: [{ date: '2025-08-20', procedure: 'Evaluación periodontal', notes: 'Control trimestral' }],
+    },
+    files: ['Perfil glicémico (placeholder)'],
+  },
+];
